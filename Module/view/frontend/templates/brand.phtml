@@ -1,0 +1,18 @@
+<?php $data = $block->getBrands(); ?>
+<?php //echo'<pre>'.print_r($data, true).'</pre>'; ?>
+
+<h1>Brands</h1>
+
+<?php if ($data): ?>
+
+    <?php foreach ($data as $brand): ?>
+        <a href="/brand/<?php echo $brand['url_key']; ?>.html" title="<?php echo $brand['name']; ?>">
+            <?php echo $brand['name']; ?><br/>
+            <?php if (!empty($brand['image'])): ?>
+                <img style="height:80px;" src="/pub/media/<?php echo $brand['image']; ?>" alt="<?php echo $brand['name']; ?>"/><br/>
+            <?php endif; ?>
+        </a>
+        <br/>
+    <?php endforeach; ?>
+
+<?php endif; ?>

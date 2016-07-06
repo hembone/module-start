@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Catalog::catalog" title="Products" sortOrder="30">
+                    <resource id="Alpine_Brand::brand" title="Brands" sortOrder="40">
+                        <resource id="Alpine_Brand::save" title="Save Brand" sortOrder="10" />
+                        <resource id="Alpine_Brand::delete" title="Delete Brand" sortOrder="20" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

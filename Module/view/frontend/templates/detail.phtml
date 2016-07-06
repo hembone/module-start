@@ -1,0 +1,24 @@
+<?php $data = $block->getBrandDetails(); ?>
+<?php //echo'<pre>'.print_r($data, true).'</pre>'; ?>
+
+<?php if ($data): ?>
+
+    <h1><?php echo $data['brand']['name']; ?></h1>
+    
+    <?php if (!empty($data['brand']['image'])): ?>
+    <img style="height:80px;" src="/pub/media/<?php echo $data['brand']['image']; ?>" alt="<?php echo $data['brand']['name']; ?>"/>
+    <?php endif; ?>
+    
+    <hr/>
+    
+    <?php foreach ($data['categories'] as $cat): ?>
+        <a href="/<?php echo $cat['url_path']; ?>.html?brand=<?php echo $data['brand']['brand_id']; ?>" title="<?php echo $cat['name']; ?>">
+            <?php echo $cat['name']; ?><br/>
+            <?php if (!empty($cat['image'])): ?>
+                <img style="height:80px;" src="<?php echo $cat['image']; ?>" alt="<?php echo $cat['name']; ?>"/><br/>
+            <?php endif; ?>
+        </a>
+        <br/>
+    <?php endforeach; ?>
+
+<?php endif; ?>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Alpine_Brand::brand" title="Brands" module="Alpine_Brand" sortOrder="40" parent="Magento_Catalog::inventory" action="brand/manage" resource="Alpine_Brand::brand"/>
+    </menu>
+</config>
