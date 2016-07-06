@@ -1,4 +1,5 @@
 # Magento 2 module boilerplate
+Includes frontend route, database table, admin menu item and admin grid ui component. 
 
 ## Instructions
 
@@ -10,4 +11,4 @@
 	* `[Module]` --> `Module`
   	* `[module]` --> `module`
   	* `[db_name]` --> `db_name`
-	* `[db_primary_key]` --> `db_primary_key`  
+	* `[db_primary_key]` --> `db_primary_key`
