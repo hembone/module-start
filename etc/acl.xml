@@ -4,9 +4,9 @@
         <resources>
             <resource id="Magento_Backend::admin">
                 <resource id="Magento_Catalog::catalog" title="Products" sortOrder="30">
-                    <resource id="Alpine_Brand::brand" title="Brands" sortOrder="40">
-                        <resource id="Alpine_Brand::save" title="Save Brand" sortOrder="10" />
-                        <resource id="Alpine_Brand::delete" title="Delete Brand" sortOrder="20" />
+                    <resource id="[Namespace]_[Module]::[module]" title="[Module]s" sortOrder="40">
+                        <resource id="[Namespace]_[Module]::save" title="Save [Module]" sortOrder="10" />
+                        <resource id="[Namespace]_[Module]::delete" title="Delete [Module]" sortOrder="20" />
                     </resource>
                 </resource>
             </resource>

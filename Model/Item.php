@@ -1,27 +1,27 @@
 <?php
 /**
- * Alpine Brand Extension
+ * [Namespace] [Module] Extension
  *
- * @category Alpine
- * @package Alpine_Brand
- * @copyright Copyright (c) 2016 Alpine Consulting, Inc (www.alpineinc.com)
- * @author Alpine Consulting (magento@alpineinc.com)
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
+ * @copyright [phpdocs_copyright]
+ * @author [phpdocs_author]
  */
 
-namespace Alpine\Brand\Model;
+namespace [Namespace]\[Module]\Model;
 
 use Magento\Catalog\Model\ProductFactory;
-use Alpine\Brand\Api\Data\BrandInterface;
+use [Namespace]\[Module]\Api\Data\ItemInterface;
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Model\AbstractModel;
 
 /**
- * Brand
+ * Item
  *
- * @category Alpine
- * @package Alpine_Brand
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
  */
-class Brand extends AbstractModel implements BrandInterface, IdentityInterface
+class Item extends AbstractModel implements ItemInterface, IdentityInterface
 {
 
     /**#@+
@@ -52,11 +52,6 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
      * @var \Magento\Framework\UrlInterface
      */
     protected $_urlBuilder;
-    
-    /**
-     * @var ProductFactory
-     */
-    private $productFactory;
 
     /**
      * Construct
@@ -64,7 +59,6 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
      * @param \Magento\Framework\Model\Context $context
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Framework\UrlInterface $urlBuilder
-     * @param ProductFactory $productFactory
      * @param \Magento\Framework\Model\ResourceModel\AbstractResource|null $resource
      * @param \Magento\Framework\Data\Collection\AbstractDb|null $resourceCollection
      * @param array $data
@@ -73,14 +67,12 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
         \Magento\Framework\Model\Context $context,
         \Magento\Framework\Registry $registry,
         \Magento\Framework\UrlInterface $urlBuilder,
-        ProductFactory $productFactory,
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = [])
     {
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
         $this->_urlBuilder = $urlBuilder;
-        $this->productFactory = $productFactory;
     }
 
     /**
@@ -90,12 +82,12 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
      */
     protected function _construct()
     {
-        $this->_init('Alpine\Brand\Model\ResourceModel\Brand');
+        $this->_init('[Namespace]\[Module]\Model\ResourceModel\Item');
     }
 
     /**
-     * Check if post url key exists
-     * return post id if post exists
+     * Check if url key exists
+     * return item id if it exists
      *
      * @param string $url_key
      * @return int
@@ -115,6 +107,7 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
     {
         return [self::STATUS_ENABLED => __('Enabled'), self::STATUS_DISABLED => __('Disabled')];
     }
+    
     /**
      * Return unique ID(s) for each object in system
      *
@@ -132,7 +125,7 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
      */
     public function getId()
     {
-        return $this->getData(self::BRAND_ID);
+        return $this->getData(self::ITEM_ID);
     }
 
     /**
@@ -146,17 +139,13 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
     }
 
     /**
-     * Return the desired URL of a post
-     *  eg: /blog/view/index/id/1/
-     * @TODO Move to a PostUrl model, and make use of the
-     * @TODO rewrite system, using url_key to build url.
-     * @TODO desired url: /blog/my-latest-blog-post-name
+     * Return the desired URL of an item
      *
      * @return string
      */
     public function getUrl()
     {
-        return $this->_urlBuilder->getUrl('blog/' . $this->getUrlKey());
+        return $this->_urlBuilder->getUrl('[module]/' . $this->getUrlKey());
     }
 
     /**
@@ -203,18 +192,18 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
      * Set ID
      *
      * @param int $id
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setId($id)
     {
-        return $this->setData(self::BRAND_ID, $id);
+        return $this->setData(self::ITEM_ID, $id);
     }
 
     /**
      * Set URL Key
      *
      * @param string $url_key
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setUrlKey($url_key)
     {
@@ -225,7 +214,7 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
      * Set name
      *
      * @param string $name
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setName($name)
     {
@@ -236,7 +225,7 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
      * Set creation time
      *
      * @param string $creation_time
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setCreationTime($creation_time)
     {
@@ -247,7 +236,7 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
      * Set update time
      *
      * @param string $update_time
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setUpdateTime($update_time)
     {
@@ -258,40 +247,11 @@ class Brand extends AbstractModel implements BrandInterface, IdentityInterface
      * Set is active
      *
      * @param int|bool $is_active
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setIsActive($is_active)
     {
         return $this->setData(self::IS_ACTIVE, $is_active);
-    }
-
-    /**
-     * Get brand by url key
-     *
-     * @param $urlKey
-     * @return \Magento\Framework\DataObject $brand
-     */
-    public function getBrandByUrlKey($urlKey)
-    {
-        $brand = $this->getCollection()
-            ->getItemByColumnValue('url_key', $urlKey)
-            ->getData();
-        return $brand;
-    }
-
-    /**
-     * Get products by brand id
-     *
-     * @param $brandId
-     * @return array $products
-     */
-    public function getProductsByBrandId($brandId)
-    {
-        $productFactory = $this->productFactory->create();
-        $products = $productFactory->getCollection()
-            ->addAttributeToFilter('brand', $brandId)
-            ->getData();
-        return $products;
     }
 
 }

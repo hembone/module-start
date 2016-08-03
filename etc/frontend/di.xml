@@ -4,8 +4,8 @@
 <type name="Magento\Framework\App\RouterList">
     <arguments>
         <argument name="routerList" xsi:type="array">
-            <item name="brand" xsi:type="array">
-                <item name="class" xsi:type="string">Alpine\Brand\Controller\Router</item>
+            <item name="[module]" xsi:type="array">
+                <item name="class" xsi:type="string">[Namespace]\[Module]\Controller\Router</item>
                 <item name="disable" xsi:type="boolean">false</item>
                 <item name="sortOrder" xsi:type="string">50</item>
             </item>

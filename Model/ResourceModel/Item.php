@@ -1,22 +1,22 @@
 <?php
 /**
- * Alpine Brand Extension
+ * [Namespace] [Module] Extension
  *
- * @category Alpine
- * @package Alpine_Brand
- * @copyright Copyright (c) 2016 Alpine Consulting, Inc (www.alpineinc.com)
- * @author Alpine Consulting (magento@alpineinc.com)
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
+ * @copyright [phpdocs_copyright]
+ * @author [phpdocs_author]
  */
 
-namespace Alpine\Brand\Model\ResourceModel;
+namespace [Namespace]\[Module]\Model\ResourceModel;
 
 /**
- * Brand
+ * Item
  *
- * @category Alpine
- * @package Alpine_Brand
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
  */
-class Brand extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
+class Item extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
 
     /**
@@ -47,7 +47,7 @@ class Brand extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('brand', 'brand_id');
+        $this->_init('[db_name]', '[db_primary_key]');
     }
 
     /**
@@ -103,7 +103,7 @@ class Brand extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      *
      * @param string $field
      * @param mixed $value
-     * @param \Alpine\Brand\Model\Brand $object
+     * @param \[Namespace]\[Module]\Model\Item $object
      * @return \Zend_Db_Select
      */
     protected function _getLoadSelect($field, $value, $object)
@@ -133,14 +133,14 @@ class Brand extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     protected function _getLoadByUrlKeySelect($url_key, $isActive = null)
     {
         $select = $this->getConnection()->select()->from(
-            ['bp' => $this->getMainTable()]
+            ['tbl' => $this->getMainTable()]
         )->where(
-            'bp.url_key = ?',
+            'tbl.url_key = ?',
             $url_key
         );
 
         if (!is_null($isActive)) {
-            $select->where('bp.is_active = ?', $isActive);
+            $select->where('tbl.is_active = ?', $isActive);
         }
 
         return $select;
@@ -178,7 +178,7 @@ class Brand extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     public function checkUrlKey($url_key)
     {
         $select = $this->_getLoadByUrlKeySelect($url_key, 1);
-        $select->reset(\Zend_Db_Select::COLUMNS)->columns('bp.brand_id')->limit(1);
+        $select->reset(\Zend_Db_Select::COLUMNS)->columns('tbl.[db_primary_key]')->limit(1);
 
         return $this->getConnection()->fetchOne($select);
     }

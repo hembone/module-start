@@ -1,14 +1,14 @@
 <?php
 /**
- * Alpine Brand Extension
+ * [Namespace] [Module] Extension
  *
- * @category Alpine
- * @package Alpine_Brand
- * @copyright Copyright (c) 2016 Alpine Consulting, Inc (www.alpineinc.com)
- * @author Alpine Consulting (magento@alpineinc.com)
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
+ * @copyright [phpdocs_copyright]
+ * @author [phpdocs_author]
  */
 
-namespace Alpine\Brand\Controller\Adminhtml;
+namespace [Namespace]\[Module]\Controller\Adminhtml;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 use Magento\Framework\Controller\ResultFactory;
@@ -16,8 +16,8 @@ use Magento\Framework\Controller\ResultFactory;
 /**
  * AbstractMassStatus
  *
- * @category Alpine
- * @package Alpine_Brand
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
  */
 class AbstractMassStatus extends \Magento\Backend\App\Action
 {

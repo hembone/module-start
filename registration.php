@@ -1,15 +1,15 @@
 <?php
 /**
- * Alpine Brand Extension
+ * [Namespace] [Module] Extension
  *
- * @category Alpine
- * @package Alpine_Brand
- * @copyright Copyright (c) 2016 Alpine Consulting, Inc (www.alpineinc.com)
- * @author Alpine Consulting (magento@alpineinc.com)
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
+ * @copyright Copyright (c) 2016
+ * @author 
  */
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Alpine_Brand',
+    '[Namespace]_[Module]',
     __DIR__
 );

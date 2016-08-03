@@ -1,14 +1,14 @@
 <?php
 /**
- * Alpine Brand Extension
+ * [Namespace] [Module] Extension
  *
- * @category Alpine
- * @package Alpine_Brand
- * @copyright Copyright (c) 2016 Alpine Consulting, Inc (www.alpineinc.com)
- * @author Alpine Consulting (magento@alpineinc.com)
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
+ * @copyright [phpdocs_copyright]
+ * @author [phpdocs_author]
  */
 
-namespace Alpine\Brand\Ui\Component\Listing\Column;
+namespace [Namespace]\[Module]\Ui\Component\Listing\Column;
 
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
@@ -16,16 +16,16 @@ use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Framework\UrlInterface;
 
 /**
- * BrandActions
+ * ItemActions
  *
- * @category Alpine
- * @package Alpine_Brand
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
  */
-class BrandActions extends Column
+class ItemActions extends Column
 {
     /** Url path */
-    const BLOG_URL_PATH_EDIT = 'brand/manage/edit';
-    const BLOG_URL_PATH_DELETE = 'brand/manage/delete';
+    const URL_PATH_EDIT = '[module]/manage/edit';
+    const URL_PATH_DELETE = '[module]/manage/delete';
 
     /** @var UrlInterface */
     protected $urlBuilder;
@@ -49,7 +49,7 @@ class BrandActions extends Column
         UrlInterface $urlBuilder,
         array $components = [],
         array $data = [],
-        $editUrl = self::BLOG_URL_PATH_EDIT
+        $editUrl = self::URL_PATH_EDIT
     ) {
         $this->urlBuilder = $urlBuilder;
         $this->editUrl = $editUrl;
@@ -67,13 +67,13 @@ class BrandActions extends Column
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as & $item) {
                 $name = $this->getData('name');
-                if (isset($item['brand_id'])) {
+                if (isset($item['[db_primary_key]'])) {
                     $item[$name]['edit'] = [
-                        'href' => $this->urlBuilder->getUrl($this->editUrl, ['brand_id' => $item['brand_id']]),
+                        'href' => $this->urlBuilder->getUrl($this->editUrl, ['[db_primary_key]' => $item['[db_primary_key]']]),
                         'label' => __('Edit')
                     ];
                     $item[$name]['delete'] = [
-                        'href' => $this->urlBuilder->getUrl(self::BLOG_URL_PATH_DELETE, ['brand_id' => $item['brand_id']]),
+                        'href' => $this->urlBuilder->getUrl(self::URL_PATH_DELETE, ['brand_id' => $item['[db_primary_key]']]),
                         'label' => __('Delete'),
                         'confirm' => [
                             'name' => __('Delete "${ $.$data.name }"'),

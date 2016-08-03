@@ -1,14 +1,14 @@
 <?php
 /**
- * Alpine Brand Extension
+ * [Namespace] [Module] Extension
  *
- * @category Alpine
- * @package Alpine_Brand
- * @copyright Copyright (c) 2016 Alpine Consulting, Inc (www.alpineinc.com)
- * @author Alpine Consulting (magento@alpineinc.com)
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
+ * @copyright [phpdocs_copyright]
+ * @author [phpdocs_author]
  */
 
-namespace Alpine\Brand\Controller\Index;
+namespace [Namespace]\[Module]\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
@@ -18,8 +18,8 @@ use Magento\Framework\View\Result\PageFactory;
 /**
  * Index
  *
- * @category Alpine
- * @package Alpine_Brand
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
  */
 class Index extends Action
 {

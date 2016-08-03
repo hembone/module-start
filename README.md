@@ -13,3 +13,5 @@ Includes frontend route, database table, admin menu item and admin grid ui compo
   	* `[module]` --> `module`
   	* `[db_name]` --> `db_name`
 	* `[db_primary_key]` --> `db_primary_key`
+	* `[phpdocs_copyright]` --> `Copyright (c) 2016`
+	* `[phpdocs_author]` --> `Your Name name@email.com`

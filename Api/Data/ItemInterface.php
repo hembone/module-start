@@ -1,21 +1,21 @@
 <?php
 /**
- * Alpine Brand Extension
+ * [Namespace] [Module] Extension
  *
- * @category Alpine
- * @package Alpine_Brand
- * @copyright Copyright (c) 2016 Alpine Consulting, Inc (www.alpineinc.com)
- * @author Alpine Consulting (magento@alpineinc.com)
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
+ * @copyright [phpdocs_copyright]
+ * @author [phpdocs_author]
  */
 
-namespace Alpine\Brand\Api\Data;
+namespace [Namespace]\[Module]\Api\Data;
 
-interface BrandInterface
+interface ItemInterface
 {
     /**
      * Constants for keys of data array. Identical to the name of the getter in snake case
      */
-    const BRAND_ID      = 'brand_id';
+    const ITEM_ID      = '[db_name]_id';
     const URL_KEY       = 'url_key';
     const NAME          = 'name';
     const CREATION_TIME = 'creation_time';
@@ -68,7 +68,7 @@ interface BrandInterface
      * Set ID
      *
      * @param int $id
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setId($id);
 
@@ -76,7 +76,7 @@ interface BrandInterface
      * Set URL Key
      *
      * @param string $url_key
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setUrlKey($url_key);
 
@@ -91,7 +91,7 @@ interface BrandInterface
      * Set name
      *
      * @param string $name
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setName($name);
 
@@ -99,7 +99,7 @@ interface BrandInterface
      * Set creation time
      *
      * @param string $creationTime
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setCreationTime($creationTime);
 
@@ -107,7 +107,7 @@ interface BrandInterface
      * Set update time
      *
      * @param string $updateTime
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setUpdateTime($updateTime);
 
@@ -115,7 +115,7 @@ interface BrandInterface
      * Set is active
      *
      * @param int|bool $isActive
-     * @return \Alpine\Brand\Api\Data\BrandInterface
+     * @return \[Namespace]\[Module]\Api\Data\ItemInterface
      */
     public function setIsActive($isActive);
 }

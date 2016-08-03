@@ -1,14 +1,14 @@
 <?php
 /**
- * Alpine Brand Extension
+ * [Namespace] [Module] Extension
  *
- * @category Alpine
- * @package Alpine_Brand
- * @copyright Copyright (c) 2016 Alpine Consulting, Inc (www.alpineinc.com)
- * @author Alpine Consulting (magento@alpineinc.com)
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
+ * @copyright [phpdocs_copyright]
+ * @author [phpdocs_author]
  */
 
-namespace Alpine\Brand\Controller;
+namespace [Namespace]\[Module]\Controller;
 
 use Magento\Framework\App\ActionFactory;
 use Magento\Framework\App\ActionInterface;
@@ -16,10 +16,10 @@ use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\RouterInterface;
 
 /**
- * Brand Router
+ * Router
  *
- * @category Alpine
- * @package Alpine_Brand
+ * @category [Namespace]
+ * @package [Namespace]_[Module]
  */
 class Router implements RouterInterface
 {
@@ -47,8 +47,8 @@ class Router implements RouterInterface
     public function match(RequestInterface $request)
     {
         $pathInfo = $request->getPathInfo();
-        if (preg_match("%/brand/(.*?).html$%", $pathInfo, $m)) {
-            $request->setModuleName('brand')->setControllerName('index')->setActionName('detail');
+        if (preg_match("%/[module]/(.*?).html$%", $pathInfo, $m)) {
+            $request->setModuleName('[module]')->setControllerName('index')->setActionName('detail');
             return $this->actionFactory->create('Magento\Framework\App\Action\Forward');
         }
     }
